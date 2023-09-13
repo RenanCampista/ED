@@ -9,8 +9,16 @@ typedef struct Node{
     Node *next;
 } Node;
 
-Node *node_create(data_type value, Node *next);
+typedef struct Flist{
+    Node *head;
+    int size;
+}Flist;
 
+Node *node_create(data_type value, Node *next);
 void node_destroy(Node *node);
+
+Flist *flist_create();
+void flist_push_front(Flist *flist, data_type value);
+void flist_destroy(Flist *flist);
 
 #endif
